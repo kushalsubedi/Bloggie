@@ -1,0 +1,22 @@
+
+
+
+<nav>
+    <ul>
+       <li>
+        {% if user.is_authenticated %}
+        {{request.user.username}}
+        <li>BLOGGIE</li>
+        {% else %}
+         BLOGGIE
+        {% endif %}
+        </li>
+        <li><a href="/">Home</a></li>
+        {% if user.is_authenticated %}
+        <li><a href="{% url  'logout' %}">logout</a></li>
+        <li><a href= "{% url 'create' %}" >create</a></li>
+        {% else %}
+        <li><a href= "{% url 'login' %}" >login</a></li>
+        {% endif %}
+    </ul>
+</nav>

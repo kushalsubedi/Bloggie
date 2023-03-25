@@ -1,0 +1,36 @@
+h1{
+    color: blue;
+}
+nav{
+    background-color: #ccc;
+    padding: 10px;
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+}
+nav li {
+    display: inline;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: #ccc;
+    text-align: center;
+    width: 100px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+}
+nav li a {
+    
+    text-decoration: none;
+    color: black;
+  
+
+    
+}
