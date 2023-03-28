@@ -18,7 +18,7 @@ def register_user(request):
             form.save()
             return redirect('login')
         else:
-            print(form.errors)
+            print('form is not valid')
     context = {'form':form}
     return render(request,'registration/register.html',context)
 

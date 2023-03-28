@@ -8,7 +8,23 @@
         <h1>Register</h1>
         <form method="POST" class="form-label">
           {% csrf_token %}
-         {{ form.as_p}} 
+        {% if form.errors %}
+        <ul class="errorlist">
+    {% for field_errors in form.errors.values %}
+    {% for error in field_errors %}
+    <li>{{ error }}</li>
+    {% endfor %}
+    {% endfor %}
+              </ul>
+{% endif %}
+            </div>
+        
+          username: <input type="text" name="username" class="form-control" placeholder="username" required>
+          email: <input type="email" name="email" class="form-control" placeholder="email" required>
+          password : <input type="password" name="password" class="form-control" placeholder="password" required>
+          confirm password : <input type="password" name="confirm_password" class="form-control" placeholder="confirm password" required>
+    
+         {% comment %} {{ form.as_p}}  {% endcomment %}
           <button type="submit" class="btn btn-primary"> Register</button>
         </form>
       </div>

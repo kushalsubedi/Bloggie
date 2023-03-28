@@ -27,9 +27,11 @@ def blog_detail(request, pk):
 
 @login_required
 def update_blog(request,pk):
-    if request.user == Blog.objects.get(pk=pk).author: 
-        blog=Blog.objects.get(pk=pk)
+    if request.user == get_object_or_404(Blog,pk=pk).author: 
+        # or you can Do this if request.user == Blog.objects.get(pk=pk).author:
+        blog=get_object_or_404(Blog,pk=pk)
         form=BlogForm(instance=blog)
+   
         if request.method == 'POST':
             form=BlogForm(request.POST,request.FILES,instance=blog)
             if form.is_valid():

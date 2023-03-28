@@ -4,11 +4,18 @@
 <div class="container">
         <form method="POST" class="form-label" enctype="multipart/form-data">
              {% csrf_token %} 
-            title:<input type="text" class="form-control" name="title"> <br> <br>
-            body: <textarea rows="4" class="form-control" cols="50" name="body"></textarea>
+            title:<input value="{{ form.title.value }}" class="form-control" name="title"> <br> <br>
+            body: <textarea rows="4" palceholder="{{ form.body.value }}" class="form-control" cols="50" name="body"></textarea>
                  <br> <br> 
-            image : <input type="file"  class="form-control" name="image"> <br> <br>
+         
+            image : <input type="file" class="btn btn-primary" name="image"><span> {{form.image.value}}</span> <br> <br>
             <input type="submit" class="form-control" value="submit"> <br> <br>
+{% comment %} 
+            {{form.as_p}}
+            {{form.errors}}
+             {% endcomment %}
+
+          
         </form>
         </div>
 {% endblock %}
